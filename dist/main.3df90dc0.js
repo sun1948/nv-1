@@ -137,7 +137,7 @@ var simplifyUrl = function simplifyUrl(url) {
 var render = function render() {
   $siteList.find("li:not(.last)").remove();
   hashMap.forEach(function (node, index) {
-    var $li = $("<li>\n      <div class=\"site\">\n          <div class=\"logo\">".concat(simplifyUrl(node.url)[0].toUpperCase(), "</div>\n          <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n          <div class=\"close\">\n            <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=\"#icon-close\"></use>\n            </svg>\n          </div>\n      </div> \n    </li>")).insertBefore($lastLi);
+    var $li = $("<li>\n      <div class=\"site\">\n          <div class=\"logo\">".concat(simplifyUrl(node.url)[0].toUpperCase(), "</div>\n          <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n          <div class=\"close\">\n            <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=\"#icon-shanchu\"></use>\n            </svg>\n          </div>\n      </div> \n    </li>")).insertBefore($lastLi);
     $li.on('click', function () {
       window.open(node.url);
     });
@@ -151,7 +151,7 @@ var render = function render() {
 
 render();
 $(".addButton").on("click", function () {
-  var url = window.prompt("请问你要添加的网址是啥？");
+  var url = window.prompt("请输入要添加的网址：");
 
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
@@ -178,4 +178,4 @@ $(document).on('keypress', function (e) {
   });
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.7012d46a.js.map
+//# sourceMappingURL=main.3df90dc0.js.map

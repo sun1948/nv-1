@@ -24,7 +24,7 @@ const render = () => {
           <div class="link">${simplifyUrl(node.url)}</div>
           <div class="close">
             <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-close"></use>
+              <use xlink:href="#icon-shanchu"></use>
             </svg>
           </div>
       </div> 
@@ -42,7 +42,7 @@ const render = () => {
 render();
 
 $(".addButton").on("click", () => {
-  let url = window.prompt("请问你要添加的网址是啥？");
+  let url = window.prompt("请输入要添加的网址：");
   if (url.indexOf("http") !== 0) {
     url = "https://" + url;
   }
