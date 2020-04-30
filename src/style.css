@@ -64,19 +64,22 @@ body {
 }
 .globalMain {
   max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* border: 1px solid red; */
+  overflow: hidden;
 }
 .siteList {
   margin-left: 0px;
-  margin-right: -20px;
+  margin-right: -10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* border: 1px solid green; */
 }
 .siteList > li {
   margin-bottom: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .siteList .site {
   width: 160px;
@@ -91,6 +94,7 @@ body {
   position: relative;
   cursor: pointer;
 }
+
 .siteList .site > .logo {
   width: 64px;
   height: 64px;
@@ -120,7 +124,7 @@ body {
   flex-direction: column;
   background: white;
   padding: 20px 0;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 4px;
   cursor: pointer;
 }
@@ -149,6 +153,9 @@ body {
     padding-top: 100px;
     margin-bottom: 60px;
   }
+  .globalMain {
+    margin-left: auto;
+    margin-right: auto;
 }
 @media (min-width: 500px) {
   .siteList {
