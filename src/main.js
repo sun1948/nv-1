@@ -15,12 +15,10 @@ const simplifyUrl = (url) => {
 };
 const render = () => {
   $siteList.find("li:not(.last)").remove();
-  hashMap.forEach((node,index) => {
+  hashMap.forEach((node, index) => {
     const $li = $(`<li>
       <div class="site">
-          <div class="logo">${simplifyUrl(
-            node.url
-          )[0].toUpperCase()}</div>
+          <div class="logo">${simplifyUrl(node.url)[0].toUpperCase()}</div>
           <div class="link">${simplifyUrl(node.url)}</div>
           <div class="close">
             <svg class="icon" aria-hidden="true">
@@ -29,14 +27,14 @@ const render = () => {
           </div>
       </div> 
     </li>`).insertBefore($lastLi);
-    $li.on('click',()=>{
-      window.open(node.url)
-    })
-    $li.on('click','.close',(e)=>{
-      e.stopPropagation()
-      hashMap.splice(index,1)
-      render()
-    })
+    $li.on("click", () => {
+      window.open(node.url);
+    });
+    $li.on("click", ".close", (e) => {
+      e.stopPropagation();
+      hashMap.splice(index, 1);
+      render();
+    });
   });
 };
 render();
@@ -58,11 +56,18 @@ window.onbeforeunload = () => {
   localStorage.setItem("x", string);
 };
 
-$(document).on('keypress',(e)=>{
-  const {key} = e
-  hashMap.forEach.call(hashMap,(node)=>{
-    if(node.logo.toLowerCase() === key){
-      window.open(node.url)
-    }
-  })
-})
+$(".searchForm > input").on("focus", () => {
+  $(document).off("keypress")
+});
+
+$(".searchForm > input").on("blur", () => {
+  $(document).on("keypress", (e) => {
+    const { key } = e;
+    hashMap.forEach.call(hashMap, (node) => {
+      if (node.logo.toLowerCase() === key) {
+        window.open(node.url);
+      }
+    });
+  });
+});
+
